@@ -1,0 +1,18 @@
+- Download mosek version 6 from http://www.mosek.com/resources/downloads/legacy/version-6
+
+- Get a 30 day trial licence (http://www.mosek.com/resources/trial-license) or 1 year academic licence (http://www.mosek.com/resources/academic-license) for mosek.
+
+- Change the path to mosek to the mosek path on your machine in the Makefile before compiling.
+
+- Download the PASCAL VOC 2011 action classification, meta files from http://cvit.iiit.ac.in/projects/lapsvm/Research_files/cvpr2014_poselet_meta.zip
+
+- Download the feature files PASCAL VOC 2011 action classification from http://cvit.iiit.ac.in/projects/lapsvm/Research_files/cvpr2014_poselet_meta.zip and place them in the directory containing the source code folder.
+
+- To train use the following command from the directory containing the svm_latent_learn binary. Flag -c is to define the value of regularisation parameter, flag —-f is to define the dimension of the feature vectors. 
+
+./svm_latent_learn -c 100 —-f 2405 ../trainFiles/jumping_detect_FW100.txt model_file
+
+- To classify use the following command from the directory containing the svm_latent_classify binary: 
+
+./svm_latent_classify ../testFiles/test_detect_jumping model_file output_scores_file 
+
